@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PDF Files</title>
+</head>
+<body>
+    <h1>PDF Files</h1>
+    <ul>
+        {% for file, link in pdf_entries %}
+            <li>
+                <a href="{{ link }}">{{ file }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Excel Files</title>
+</head>
+<body>
+    <h1>Excel Files</h1>
+    <ul>
+        {% for file, link in excel_entries %}
+            <li>
+                <a href="{{ link }}">{{ file }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

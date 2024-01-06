@@ -1,0 +1,113 @@
+<html><head><style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário Bonito</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            place-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: grid;
+            gap: 10px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        select {
+            appearance: none;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Adicionar Entrada</h1>
+        <form method="POST" action="{{ url_for('add_entry') }}">
+            <label for="title">Título:</label>
+            <input type="text" id="title" name="title">
+            
+            <label for="date">Data:</label>
+            <input type="date" id="date" name="date">
+            
+            <label for="location">Localização:</label>
+            <input type="text" id="location" name="location">
+            
+            <label for="description">Descrição:</label>
+            <textarea id="description" name="description"></textarea>
+            
+            <label for="cost">Custo:</label>
+            <input type="number" id="cost" name="cost">
+            
+            <label for="status">Status:</label>
+            <select id="status" name="status">
+                <option value="Em Progresso">Em Progresso</option>
+                <option value="Concluído">Concluído</option>
+                <option value="Atrasado">Atrasado</option>
+            </select>
+            
+            <label for="activity_type">Tipo de Atividade:</label>
+            <input type="text" id="activity_type" name="activity_type">
+            
+            <label for="responsible">Responsável:</label>
+            <input type="text" id="responsible" name="responsible">
+            
+            <label for="priority">Prioridade:</label>
+            <select id="priority" name="priority">
+                <option value="Baixa">Baixa</option>
+                <option value="Média">Média</option>
+                <option value="Alta">Alta</option>
+            </select>
+            
+            <label for="url">URL:</label>
+            <input type="url" id="url" name="url">
+            
+            <label for="attachment">Anexo:</label>
+            <input type="file" id="attachment" name="attachment">
+            
+            <input type="submit" value="Adicionar">
+        </form>
+    </div>
+</body>
+</html>
+</style></head><body><p>Title: a</p><p>Date: </p><p>Location: 2004-12-27</p><p>Description: aa</p><p>Cost: aa</p><p>Status: 123.00</p><p>Activity Type: Atrasado</p><p>Responsible: 123</p><p>Priority: 123</p><p>URL: Baixa</p><p>Attachment: </p></body></html>

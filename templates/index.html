@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar Entrada</title>
+    <!-- Adicione o link para o CSS do Bootstrap -->
+    <link rel="stylesheet" href="static\style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Adicione o link para o CSS do FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+.file-menu {
+            margin-top: 20px;
+        }
+
+        .file-menu h2 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .file-item {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .file-item a {
+            color: #333;
+            text-decoration: none;
+            display: block;
+        }
+
+        .file-item i {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .file-item p {
+            margin: 0;
+            font-size: 14px;
+        }    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>Adicionar Entrada</h1>
+            <form method="POST" action="{{ url_for('add_entry') }}">
+                <label for="title">Título:</label>
+                <input type="text" id="title" name="title">
+                
+                <label for="date">Data:</label>
+                <input type="date" id="date" name="date">
+                
+                <label for="location">Localização:</label>
+                <input type="text" id="location" name="location">
+                
+                <label for="description">Descrição:</label>
+                <textarea id="description" name="description"></textarea>
+                
+                <label for="cost">Custo:</label>
+                <input type="number" id="cost" name="cost">
+                
+                <label for="status">Status:</label>
+                <select id="status" name="status">
+                    <option value="Em Progresso">Em Progresso</option>
+                    <option value="Concluído">Concluído</option>
+                    <option value="Atrasado">Atrasado</option>
+                </select>
+                
+                <label for="activity_type">Tipo de Atividade:</label>
+                <input type="text" id="activity_type" name="activity_type">
+                
+                <label for="responsible">Responsável:</label>
+                <input type="text" id="responsible" name="responsible">
+                
+                <label for="priority">Prioridade:</label>
+                <select id="priority" name="priority">
+                    <option value="Baixa">Baixa</option>
+                    <option value="Média">Média</option>
+                    <option value="Alta">Alta</option>
+                </select>
+                
+                <label for="url">URL:</label>
+                <input type="url" id="url" name="url">
+                
+                <label for="attachment">Anexo:</label>
+                <input type="file" id="attachment" name="attachment">
+                
+                <input type="submit" value="Adicionar">
+            </form>
+        </div>
+
+        <!-- Para os arquivos Excel -->
+        <!-- Para os arquivos Excel -->
+        <div class="file-menu">
+            <h2>Arquivos Excel Disponíveis</h2>
+            <div class="row">
+                {% for entry in excel_entries %}
+                    <div class="col-md-4">
+                        <div class="file-item">
+                            <a href="{{ entry[1] }}" download>
+                                <i class="fas fa-file-excel"></i>
+                                <p>{{ entry[0] }}</p>
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Para os arquivos PDF -->
+        <div class="file-menu">
+            <h2>Arquivos PDF Disponíveis</h2>
+            <div class="row">
+                {% for entry in pdf_entries %}
+                    <div class="col-md-4">
+                        <div class="file-item">
+                            <a href="{{ entry[1] }}" download>
+                                <i class="fas fa-file-pdf"></i>
+                                <p>{{ entry[0] }}</p>
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Adicione os scripts do Bootstrap e FontAwesome no final do arquivo HTML -->
+    <!-- Adicione o link para o JavaScript do Bootstrap -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Adicione o link para o JavaScript do FontAwesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+</body>
+</html>
